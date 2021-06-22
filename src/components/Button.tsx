@@ -1,10 +1,9 @@
-import { useState } from "react";
+import { ButtonHTMLAttributes } from "react";
 
-export function Button() {
-  const [number, setNumber] = useState(0);
-  function handleClickButton() {
-    setNumber(number + 1);
-  }
+import "../styles/button.scss";
 
-  return <button onClick={handleClickButton}>{number}</button>;
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
+
+export function Button(props: ButtonProps) {
+  return <button className="button" {...props} />;
 }
